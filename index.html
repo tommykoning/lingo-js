@@ -5,9 +5,15 @@
 	</head>
 	<body>
 		<h1>lingo</h1>
-		<button id="start" onclick="start">start</button>
-		<button id="reset">reset</button>
-		<section id="playfield"> </section>
+		<button id="start" onclick="start()">start</button>
+		<button id="reset" onclick="reset()">reset</button>
+		<section id="playfield">
+			<article></article> 
+		</section>
 		<input type="text" name="ans">
+		<button id="check" onclick="check">check</button>
+		<p id="test"></p>
+		<script type="text/javascript" src='words-nl.js'></script>
+		<script type="text/javascript" src='lingo.js'></script>
 	</body>
 </html>
