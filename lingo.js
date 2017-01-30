@@ -1,7 +1,17 @@
+var splinter = null
+
 function start() {
-	document.getElementById('test').innerHTML = "test"
+	var nummer = Math.floor(Math.random() * words.length) ; 
+	var lingowoord = words[nummer];
+	splinter = lingowoord.split('');
+	document.getElementsByClassName('beginletter').innerHTML = 'splinter[0]';
+	console.log(splinter);
 }
 
 function reset() {
 	location.reload();
+}
+
+function check() {
+
 }
