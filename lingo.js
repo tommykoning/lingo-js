@@ -1,6 +1,7 @@
-var splinter = null
+var splinter = null;
+var poging [];
 
-//causes game to st
+//causes game to start
 function start() {
 	var nummer = Math.floor(Math.random() * words.length) ; 
 	var lingowoord = words[nummer];
@@ -22,6 +23,21 @@ function reset() {
 function check() {
 	var input = document.getElementById('answer_Input').value, 
 	answer_input = input.value;
+	var ans = input.split('');
+	var z = 0
+
+	for (var i = 0; i < 5; i++) {
+		var x = [z]
+		var y = document.getElementsByClassName('andwoord_1') + x;
+
+
+		
+		if (y == splinter[z]) {
+			document.getElementsByClassName('andwoord_1')[z].Style.Color = "green";
+		};
+		console.log(y)
+		z++;
+	}
 
 	console.log(input);
 } 
