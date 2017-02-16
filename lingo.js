@@ -1,17 +1,20 @@
-var splinter = null;
-var poging [];
+var lingo_ans = null;
+var poging = [document.getElementsByClassName('andwoord_1') , document.getElementsByClassName('andwoord_2') ,  document.getElementsByClassName('andwoord_3') , document.getElementsByClassName('andwoord_4') , document.getElementsByClassName('andwoord_5')];
+var poging_nummer = 0;
 
 //causes game to start
 function start() {
 	var nummer = Math.floor(Math.random() * words.length) ; 
 	var lingowoord = words[nummer];
-	splinter = lingowoord.split('');
+
+	lingo_ans = lingowoord.split('');
+
 	for (var i = 0; i < 5;) {
-		document.getElementsByClassName('beginletter')[i].innerHTML = splinter[0];
+		document.getElementsByClassName('beginletter')[i].innerHTML = lingo_ans[0];
 		i++;
 	}
 
-	console.log(splinter);
+	console.log(lingo_ans);
 }
 
 //resets game
@@ -21,23 +24,33 @@ function reset() {
 
 //checks answer 
 function check() {
-	var input = document.getElementById('answer_Input').value, 
-	answer_input = input.value;
-	var ans = input.split('');
-	var z = 0
+	var input = document.getElementById('answer_Input').value;
+	var ans = input.split('', 5);
 
-	for (var i = 0; i < 5; i++) {
-		var x = [z]
-		var y = document.getElementsByClassName('andwoord_1') + x;
+	poging[poging_nummer][i] = ans[i];
 
+	for (var i = 0; i < 5;) {
+		poging[poging_nummer][i] = ans[i];
 
-		
-		if (y == splinter[z]) {
-			document.getElementsByClassName('andwoord_1')[z].Style.Color = "green";
-		};
-		console.log(y)
-		z++;
+		if (ans[i] == lingo_ans[i]) {
+			poging[poging_nummer][i].style.background = "green";
+
+		} else {
+			poging[poging_nummer][i].style.background = "red";
+
+			for (var k = 0; k < 5; k++) {
+				if (ans[k] == lingo_ans[i]) {
+					poging[poging_nummer][i].style.background = "yellow";
+				}
+			}
+		}
+	i++
 	}
 
-	console.log(input);
+	if (poging_nummer == 5) {
+		location.reload();
+	}
+	poging_nummer++;
+	document.getElementById('answer_Input').value = '';
+	console.log(poging_nummer);
 } 
