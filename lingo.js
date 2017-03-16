@@ -3,22 +3,29 @@ var poging = [document.getElementsByClassName('andwoord_1'), document.getElement
 var poging_nummer = 0;
 
 //causes game to start
-function start() {
+function start() 
+{
 	var nummer = Math.floor(Math.random() * words.length) ; 
 	var lingowoord = words[nummer];
 
 	lingo_ans = lingowoord.split('');
 
 	document.getElementById('beginletter').innerHTML = lingo_ans[0];
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35e28cff2ebed665822a92577fe6318dd2ad61cd
 }
 
 //resets game
-function reset() {
+function reset() 
+{
 	location.reload();
 }
 
 //checks answer 
-function check() {
+function check() 
+{
 	var input = document.getElementById('answer_Input').value;
 	var ans = input.split('', 5);
 
@@ -38,6 +45,9 @@ function check() {
 				}
 			}
 		}
+	if (poging_nummer >= 4) {
+		location.reload(); 
+	}
 	i++
 	}
 	
