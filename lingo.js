@@ -10,8 +10,6 @@ function start() {
 	lingo_ans = lingowoord.split('');
 
 	document.getElementById('beginletter').innerHTML = lingo_ans[0];
-
-	console.log(lingo_ans);
 }
 
 //resets game
@@ -34,14 +32,15 @@ function check() {
 			poging[poging_nummer][i].style.background = "red";
 
 			for (var k = 0; k < 5; k++) {
-				if (ans[k] == lingo_ans[i]) {
+				if (ans[i] == lingo_ans[k]) {
+
 					poging[poging_nummer][i].style.background = "yellow";
 				}
 			}
 		}
 	i++
 	}
-
+	
 	poging_nummer++;
 	document.getElementById('answer_Input').value = '';
 	console.log(poging_nummer);
