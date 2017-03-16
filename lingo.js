@@ -11,10 +11,6 @@ function start()
 	lingo_ans = lingowoord.split('');
 
 	document.getElementById('beginletter').innerHTML = lingo_ans[0];
-<<<<<<< HEAD
-=======
-
->>>>>>> 35e28cff2ebed665822a92577fe6318dd2ad61cd
 }
 
 //resets game
