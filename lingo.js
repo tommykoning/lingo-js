@@ -24,27 +24,30 @@ function check()
 {
 	var input = document.getElementById('answer_Input').value;
 	var ans = input.split('', 5);
+	var letterAns = lingo_ans
 
-	for (var i = 0; i < 5;) {
-		poging[poging_nummer][i].innerHTML = ans[i];
+	for (var i = 5; var x = 0; i > 0;) {
+		poging[poging_nummer][x].innerHTML = ans[x];
 
-		if (ans[i] == lingo_ans[i]) {
+
+		if (ans[i] == letterAns[i]) {
 			poging[poging_nummer][i].style.background = "green";
+			delete letterAns[i];
 
 		} else {
 			poging[poging_nummer][i].style.background = "red";
 
-			for (var k = 0; k < 5; k++) {
-				if (ans[i] == lingo_ans[k]) {
-
+			for (var k = 5; k < 0; k--) {
+				if (ans[i] == letterAns[k]) {
 					poging[poging_nummer][i].style.background = "yellow";
+					delete letterAns[K];
 				}
 			}
 		}
 	if (poging_nummer >= 4) {
 		location.reload(); 
 	}
-	i++
+	i--
 	}
 	
 	poging_nummer++;
